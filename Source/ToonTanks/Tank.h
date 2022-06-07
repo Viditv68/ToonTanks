@@ -19,6 +19,10 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	virtual void Tick(float DeltaTime) override;
+	
+	void HandleDestruction();
+
+	APlayerController* GetTankPlayerController() const{return TankPlayerController;}
 
 protected:
 	// Called when the game starts or when spawned
@@ -36,7 +40,7 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	class UCameraComponent* Camera;
 
-	APlayerController* PlayerControllerRef;
+	APlayerController* TankPlayerController;
 
 	void Move(float value);
 	void Turn(float value);
