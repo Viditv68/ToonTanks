@@ -41,8 +41,6 @@ void ATank::Tick(float DeltaTime)
 
 }
 
-
-
 void ATank::BeginPlay()
 {
     Super::BeginPlay();
@@ -69,6 +67,7 @@ void ATank::HandleDestruction()
     Super::HandleDestruction();
     SetActorHiddenInGame(true);
     SetActorTickEnabled(false);
+    bAlive = false;
 }
 
 
